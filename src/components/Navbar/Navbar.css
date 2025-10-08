@@ -1,0 +1,77 @@
+        .bg-blue{
+    background-color: #fff;
+}
+
+.navbar h1 {
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+}
+
+.login-logo{
+    background-color: #f35124;
+    width: 40px; 
+    height: 40px; 
+    text-transform: capitalize;
+    border-radius: 50%!important;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    text-align: center; 
+}
+
+a.nav-signout{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* .search-bar {
+    width: 100%;
+    max-width: 50%;
+}
+
+.search-bar input{
+    height: 40px;
+    background-color: #444;
+} */
+
+
+.nav-profile{
+    border-radius: 50%;
+}
+
+
+.search-bar {
+    width: 100%;
+}
+.search-bar {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 700px;
+    height: 40px;
+    padding: 0 28px 0 56px;
+    border: none;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 600px){
+.search-bar {
+    position: relative;
+    /* right: 198px; */
+    left: 20px;
+    padding-bottom: 10px;
+}
+}
+
+@media screen and (max-width: 990px){
+.search-bar {
+    position: relative;
+    right: 1px;
+}
+}

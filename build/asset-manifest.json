@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bf59af32.chunk.css",
+    "main.js": "/static/js/main.9f5fe8af.chunk.js",
+    "main.js.map": "/static/js/main.9f5fe8af.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.56bc9b6e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.56bc9b6e.js.map",
+    "static/js/2.f1517275.chunk.js": "/static/js/2.f1517275.chunk.js",
+    "static/js/2.f1517275.chunk.js.map": "/static/js/2.f1517275.chunk.js.map",
+    "static/js/3.16c15c40.chunk.js": "/static/js/3.16c15c40.chunk.js",
+    "static/js/3.16c15c40.chunk.js.map": "/static/js/3.16c15c40.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bf59af32.chunk.css.map": "/static/css/main.bf59af32.chunk.css.map",
+    "static/js/2.f1517275.chunk.js.LICENSE.txt": "/static/js/2.f1517275.chunk.js.LICENSE.txt",
+    "static/media/kido-logo.e8a4f0c2.png": "/static/media/kido-logo.e8a4f0c2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56bc9b6e.js",
+    "static/js/2.f1517275.chunk.js",
+    "static/css/main.bf59af32.chunk.css",
+    "static/js/main.9f5fe8af.chunk.js"
+  ]
+}
