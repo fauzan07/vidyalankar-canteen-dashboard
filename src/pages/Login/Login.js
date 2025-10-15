@@ -59,7 +59,7 @@ function Login(props) {
                     </div>
                     <div className="row pt-3">
                       <div className="col-lg-12 text-center">
-                      <p class="text-center"> Don't have an account?  <Link to="/mlh-trust-dashboard-SignUp">Sign up</Link></p>
+                      <p class="text-center"> Don't have an account?  <Link to="/vidyalankar-dashboard-SignUp">Sign up</Link></p>
                       </div>
                     </div>
                 </div>

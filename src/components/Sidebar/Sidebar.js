@@ -1,8 +1,9 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {NavLink , withRouter } from "react-router-dom";
 import $ from "jquery";
 import fire from '../../config/Fire';
 import { AuthContext } from '../../context/Auth';
+import Axios from "axios";
 import './Sidebar.css';
 
 
@@ -15,6 +16,25 @@ const Sidebar=()=> {
   const tooglesidebar=()=>
   {
     $('#sidebar').toggleClass('active');
+  }
+
+    const [registerUser, setRegisterUser] = useState("");
+  const [isadmin, setIsadmin] = useState(false);
+
+  useEffect(() => {
+    getRegisteredUserDetail();
+  }, []);
+
+  const getRegisteredUserDetail = () => {
+    Axios
+    .get(`https://vidyalankar-canteen-app-default-rtdb.firebaseio.com/user.json?orderBy="userEmail"&equalTo="${currentUser.email}"&print="pretty"`)
+    .then((response) => {
+      setRegisterUser(response.data)
+      if(Object.keys(response.data).length) {
+        setIsadmin(true)
+      };
+    })
+    .catch((error) => console.log(error));
   }
 
 
@@ -38,6 +58,9 @@ const Sidebar=()=> {
           </li>
           <li>
             <NavLink exact to="/product" >Create Product</NavLink>
+          </li>
+           <li>
+            <NavLink exact to="/admin-orders" >View orders</NavLink>
           </li>
           {/* <li>
             <a href="http://www.mlhngo.com/" target="_blank" rel="noopener noreferrer">MLH Trust</a>

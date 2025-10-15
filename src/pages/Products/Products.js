@@ -11,7 +11,8 @@ import Loader from "../../common/Loader/Loader";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
-import BlogData from '../../components/BlogData/BlogData';
+import BlogData from '../../components/ProductsData/ProductsData';
+import ProductsData from '../../components/ProductsData/ProductsData';
 
 var metadata = {
   contentType: 'image/jpeg',
@@ -28,7 +29,7 @@ class MyUploadAdapter {
         new Promise((resolve, reject) => {
           let storage = firebase.storage().ref();
           let uploadTask = storage
-            .child(`/images/eventData/${file.name}`)
+            .child(`/images/productsData/${file.name}`)
             .put(file, metadata);
           uploadTask.on(
             console.log(uploadTask + "--------------------------------"),
@@ -48,7 +49,7 @@ class MyUploadAdapter {
 }
 
 
-function Blogs(props) {
+function Products(props) {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -104,10 +105,10 @@ function Blogs(props) {
     e.preventDefault();
     var today = new Date();
     var time = today.getHours() + "_" + today.getMinutes() + "_" + today.getSeconds();
-    const uploadTask = storage.ref(`/images/event/${time + "_" + file.name}`).put(file);
+    const uploadTask = storage.ref(`/images/products/${time + "_" + file.name}`).put(file);
     uploadTask.on("state_changed", console.log, console.error, () => {
       storage
-        .ref("images/event")
+        .ref("images/products")
         .child(time + "_" + file.name)
         .getDownloadURL()
         .then((url) => {
@@ -120,7 +121,7 @@ function Blogs(props) {
   const getPostData = () => {
     // Axios
     // .get(`https://software-bazaar-default-rtdb.firebaseio.com/event.json`)
-    firebase.database().ref(`event`).get()
+    firebase.database().ref(`products`).get()
       .then((response) => {
         // setPostData(response.data)
         setTimeout(setPostData(response.val()), 5000);
@@ -138,7 +139,7 @@ function Blogs(props) {
       if (editDetails) {
         // Axios
         // .put(`https://educaretech-dashboard-default-rtdb.firebaseio.com/SessionData/${postId}.json`,
-        firebase.database().ref(`event/${postId}`).set(
+        firebase.database().ref(`products/${postId}`).set(
           {
             postPositionNo: postPositionNo === "" ? postPosition : postPositionNo,
             postImage: postImage === "" ? url : postImage,
@@ -152,7 +153,7 @@ function Blogs(props) {
           }
         )
           .then((response) => {
-            alert("event edited succesfully");
+            alert("products edited succesfully");
             window.location.reload();
             setIsPostEdited(true);
           })
@@ -163,7 +164,7 @@ function Blogs(props) {
         // if user wants to edit then put request is used
         // Axios
         // .post(`https://educaretech-dashboard-default-rtdb.firebaseio.com/SessionData.json`,
-        firebase.database().ref('event/').push(
+        firebase.database().ref('products/').push(
           {
             postPositionNo: postPosition,
             postImage: url,
@@ -178,7 +179,7 @@ function Blogs(props) {
           }
         )
           .then((response) => {
-            alert("event added succesfully");
+            alert("products added succesfully");
             // swal("succesful!", "post added succesfully!", "success");
             window.location.reload();
             setIsPostAdded(true);
@@ -225,12 +226,12 @@ function Blogs(props) {
 
   // handles archive on card archive click
   const handleDelete = (postId, e) => {
-    if (window.confirm("Are you sure you want to delete the event?")) {
+    if (window.confirm("Are you sure you want to delete the products?")) {
       // Axios
       // .delete(`https://educaretech-dashboard-default-rtdb.firebaseio.com/SessionData/${postId}.json`)
-      firebase.database().ref(`event/${postId}`).remove()
+      firebase.database().ref(`products/${postId}`).remove()
         .then((response) => {
-          alert("event deleted succesfully");
+          alert("products deleted succesfully");
           window.location.reload();
           setIsPostDelete(true);
         })
@@ -413,7 +414,7 @@ function Blogs(props) {
                     {postData ?
                       Object.entries(postData).sort((a, b) => a[1].postPositionNo - b[1].postPositionNo).map((item) => (
 
-                        <BlogData
+                        <ProductsData
                           key={item[0]}
                           id={item[0]}
                           postTopicName={item[1].postTopicName}
@@ -460,4 +461,4 @@ function Blogs(props) {
 
 }
 
-export default Blogs;
+export default Products;

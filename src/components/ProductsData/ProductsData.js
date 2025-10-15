@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import parse from 'html-react-parser';
 
 
-const BlogData = (props) => {
+const ProductsData = (props) => {
   const { currentUser } = useContext(AuthContext);
   const { id,
     postImage,
@@ -85,4 +85,4 @@ const BlogData = (props) => {
   );
 };
 
-export default BlogData;
+export default ProductsData;

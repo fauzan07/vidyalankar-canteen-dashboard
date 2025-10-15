@@ -21,6 +21,10 @@ body {
     padding: 0px 5px;
 }
 
+.mainhome{
+    margin-top: 100px;
+}
+
 @media (max-width: 991.98px) {
     .main {
         margin-left: 0px;
@@ -146,6 +150,11 @@ option {
     height: 500px !important ;
 }
 
+.activity-card-product {
+    height: 580px !important ;
+}
+
+
 .activity-card2 {
     height: 200px !important ;
 }
@@ -188,7 +197,7 @@ figure.media {
 }
 
 .activity-discription {
-    height: 30%;
+    height: 20%;
 }
 
 .reset-btn {
